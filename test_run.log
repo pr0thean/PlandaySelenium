@@ -1,0 +1,27 @@
+INFO     root:config_handler.py:22 Trying to initialize ConfigHandler
+INFO     root:plan_day_app.py:13 Trying to initialize PlanDayApp
+INFO     root:conftest.py:12 Trying to init Login main page
+INFO     root:plan_day_app.py:17 Trying to lunch web PlanDay app
+INFO     root:pd_base_pages.py:61 Trying to wait for page to load
+INFO     root:pd_login_page.py:52 Trying to confirm CookiesBanner popup
+INFO     root:pd_base_pages.py:44 Successfully initialized page PlanDayApp
+INFO     root:test_schedule_section_add_new_shift.py:20 Log in already existing user with incorrect credentials
+INFO     root:pd_login_page.py:67 Trying to login user with incorrect credentials: plandayqa@outlook.com, dzanjxuprsyvmaq
+INFO     root:pd_login_page.py:56 Trying to fill login form with following credentials: plandayqa@outlook.com, dzanjxuprsyvmaq
+INFO     root:test_schedule_section_add_new_shift.py:24 Verify presence of message about incorrect credentials
+INFO     root:pd_login_page.py:74 Trying to verify if message about incorrect credentials is present and equal to 'The username or password is incorrect.'
+INFO     root:test_schedule_section_add_new_shift.py:26 Log in already existing user with correct credentials
+INFO     root:pd_login_page.py:61 Trying to login user with correct credentials: plandayqa@outlook.com, APItesting21
+INFO     root:pd_login_page.py:56 Trying to fill login form with following credentials: plandayqa@outlook.com, APItesting21
+INFO     root:pd_base_pages.py:44 Successfully initialized page PlanDayMainHomePage
+INFO     root:test_schedule_section_add_new_shift.py:30 Navigate to 'Schedule' page from main navigation bar
+INFO     root:pd_main_home_page.py:33 Trying to navigate from Main page to Schedule page
+INFO     root:pd_base_pages.py:44 Successfully initialized page PlanDaySchedulePage
+INFO     root:test_schedule_section_add_new_shift.py:32 Verify if 'Schedule' page url contains substring
+INFO     root:pd_schedule_page.py:59 Trying to verify if Schedule page url contains sub_url: /page/schedule
+INFO     root:test_schedule_section_add_new_shift.py:34 Verify shown week interval period of time
+INFO     root:pd_schedule_page.py:66 Trying to verify if shown on grid time interval equal to: Week
+INFO     root:test_schedule_section_add_new_shift.py:36 Add standard shift for employee for today
+INFO     root:pd_schedule_page.py:113 Trying to add employee: Employee One shift for today with following parameters: start of the shift: 9, end of the shift: 17
+INFO     root:pd_schedule_page.py:101 Trying to click on Today grid cell to add shift for employee: Employee One
+INFO     root:conftest.py:23 Trying to close session
