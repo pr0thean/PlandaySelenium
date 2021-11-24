@@ -15,6 +15,9 @@ pip install pytest
 
 
 Structure of the files:
+
 plan_day/ -> here you can find all pages connected with running test
+
 testrun_config/ -> inside this folder there is config file where you should put at least path to your webdriver location
+
 tests/test_schedule_section/ -> here is the main test with user_account file
