@@ -19,6 +19,12 @@ class PlanDaySchedulePage(PlanDayBaseAbstractClass):
         self._header_grid_with_date = WebControl(
             class_name='board-header__cell'
         )
+        self._header_grid_with_today = WebControl(
+            class_name='board-header__cell--today'
+        )
+        self._header_grid_with_shifts = WebControl(
+            class_name='board-header__details-counter'
+        )
         self._schedule_menu_control = WebControl(
             class_name='scheduling__period-menu'
         )
@@ -153,7 +159,7 @@ class PlanDaySchedulePage(PlanDayBaseAbstractClass):
             shift_number_before_from_today_header + 1 == shift_number_after_from_today_header
 
     def _get_today_number_of_shifts(self) -> int:
-        today_header = "board-header__cell--today"
-        today_header = self._driver.find_element_by_class_name(today_header)
-        today_shift = today_header.find_element_by_class_name("board-header__details-counter").text[0]
-        return int(today_shift)
+        today_header = self._find_element(web_control=self._header_grid_with_today)
+        today_shifts = today_header.find_element_by_class_name(self._header_grid_with_shifts.class_name)
+        today_shifts = today_shifts.text[0]
+        return int(today_shifts)

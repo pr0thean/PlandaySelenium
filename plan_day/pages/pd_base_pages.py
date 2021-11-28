@@ -144,11 +144,12 @@ class PlanDayBaseAbstractClass(metaclass=ABCMeta):
         self._wait_for_element(web_control=web_control)
         number_of_located_elements = int(len(self._find_elements(web_control=web_control)))
         start_time = datetime.now().second
-        while number_of_located_elements < expected_number_of_elements:
+        while number_of_located_elements <= expected_number_of_elements:
             number_of_located_elements = int(len(self._find_elements(web_control=web_control)))
             new_time = datetime.now().second
             if new_time-start_time >= timeout:
-                break
+                raise TimeoutError(f"Impossible to locate {expected_number_of_elements} elements within "
+                                   f"{timeout} seconds")
 
     def _is_element_enable(self,
                            web_control: WebControl) -> bool:

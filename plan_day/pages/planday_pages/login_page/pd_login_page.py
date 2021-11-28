@@ -10,8 +10,9 @@ class PlanDayLoginPage(PlanDayBaseAbstractClass):
         self.config_handler = config_handler
 
         # cookies banner
-        self._cookies_banner_header_description_control = WebControl(id="cookie-banner"
-)
+        self._cookies_banner_header_description_control = WebControl(
+            id="cookie-banner"
+        )
         self._cookies_banner_ok_button_control = WebControl(
             class_name='button-success'
         )
