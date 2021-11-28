@@ -135,14 +135,14 @@ class PlanDaySchedulePage(PlanDayBaseAbstractClass):
         self._number_of_shift_from_today_header_after_update = self._get_today_number_of_shifts()
         return schedule_page
 
-    def verify_if_new_shift_added(self, employee_for_add_shift: str):
+    def verify_if_new_shift_added(self, employee_for_add_shift: str) -> bool:
         logging.info(f"Trying to check if shift is added for employee: {employee_for_add_shift}")
         # number of shifts before adding new shift
         employee_details_before = [el for el in self._employee_details_before_update if
                                    el['name'] == employee_for_add_shift][0]
         cards_with_shift_before = employee_details_before['number_of_shifts']
-        shift_number_before_from_label_raw = employee_details_before['shift_info'].split('/')
-        shift_number_before_from_label = int(shift_number_before_from_label_raw[1].strip()[0])
+        shift_number_before_from_label = employee_details_before['shift_info'].split('/')
+        shift_number_before_from_label = int(shift_number_before_from_label[1].strip()[0])
         shift_number_before_from_today_header = self._number_of_shift_from_today_header_before_update
 
         # number of shifts before after new shift
@@ -150,8 +150,8 @@ class PlanDaySchedulePage(PlanDayBaseAbstractClass):
                                   el['name'] == employee_for_add_shift][0]
         cards_with_shift_after = employee_details_after['number_of_shifts']
 
-        shift_number_after_from_label_raw = employee_details_after['shift_info'].split('/')
-        shift_number_after_from_label = int(shift_number_after_from_label_raw[1].strip()[0])
+        shift_number_after_from_label = employee_details_after['shift_info'].split('/')
+        shift_number_after_from_label = int(shift_number_after_from_label[1].strip()[0])
         shift_number_after_from_today_header = self._number_of_shift_from_today_header_after_update
 
         return cards_with_shift_before + 1 == cards_with_shift_after and  \
