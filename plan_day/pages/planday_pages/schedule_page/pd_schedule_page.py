@@ -129,7 +129,7 @@ class PlanDaySchedulePage(PlanDayBaseAbstractClass):
         self._number_of_shift_from_today_header_after_update = self._get_today_number_of_shifts()
         return schedule_page
 
-    def check_if_new_shift_added(self, employee_for_add_shift: str):
+    def verify_if_new_shift_added(self, employee_for_add_shift: str):
         logging.info(f"Trying to check if shift is added for employee: {employee_for_add_shift}")
         # number of shifts before adding new shift
         employee_details_before = [el for el in self._employee_details_before_update if

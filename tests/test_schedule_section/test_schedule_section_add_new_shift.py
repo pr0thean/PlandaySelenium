@@ -39,4 +39,4 @@ class TestScheduleAddNewShift:
             shift_start_hour=9,
             shift_end_hour=17)
         logging.info("Verify if shift is added for today for given employee")
-        assert schedule_page.check_if_new_shift_added(employee_for_add_shift="Employee One")
+        assert schedule_page.verify_if_new_shift_added(employee_for_add_shift="Employee One")
